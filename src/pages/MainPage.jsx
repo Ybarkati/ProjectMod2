@@ -35,8 +35,19 @@ export function MainPage(){
         getData(params.symbol)
       }, [])
     return (
-        <div className="containerOfConatainer" style={{marginLeft:Open? "280px":"80px",transition:" margin 300ms"}}>
-            <Link to="/books"><div>GO BACK</div></Link>
+        <div className="containerOfConatainer" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
+            
+            <div className='barTop'>
+               <svg onClick={()=>navigate(`/books`)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0  150 70" aria-labelledby="title"
+               aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
+               <title>Angle Left Circle</title>
+                <desc>A solid styled icon from Orion Icon Library.</desc>
+               <path className='svg-icon' data-name="layer1"
+               d="M64 32a32 32 0 1 0-32 32 32.001 32.001 0 0 0 32-32zM34.79 44.361L19.984 31.828 34.79 19.307a2 2 0 1 1 2.583 3.054l-11.195 9.47 11.196 9.478a2 2 0 1 1-2.585 3.052z"
+                fill="#ffffff"></path>
+              </svg>
+                <h1>{params.symbol.toUpperCase()}</h1>
+            </div>
             <div className="containerMain">
                 {data.map((element)=>
                { return (

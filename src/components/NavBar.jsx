@@ -11,11 +11,11 @@ const NavBar = () => {
   ];
 
   return (
-    <div className={`flex fixed top-0 border-e-2 `}>
+    <div className={`flex fixed top-0 border-e-4 `}>
       <div
         className={` ${
-          Open ? "w-72 " : "w-20 "
-        } bg-gradient-to-l from-gray-700 via-gray-900 to-black h-screen p-5  pt-8 relative duration-300`}
+          Open ? "w-40 " : "w-20 "
+        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
       >
         <img
           src="./src/assets/control.png"

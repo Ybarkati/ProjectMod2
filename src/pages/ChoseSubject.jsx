@@ -45,7 +45,7 @@ export function ChoseSubject(){
     };
 
     return (
-      <div className="choseSubject" style={{marginLeft:Open? "280px":"80px",transition:" margin 300ms"}}>
+      <div className="choseSubject" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
          <div className="containerChosebox"> 
          <input className="Chosebox" value={subject} onChange={handleOptionChange}placeholder="  Search for your Book..." />
          <p>|</p>
