@@ -118,14 +118,26 @@ html,body{
 .oneBook button{
   width: 270px;
   height: 370px;
-  
-  border: 1px solid black;
   border-radius: 10px;
   background-color: #272727;
   overflow: auto;
   transition: 1s;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(255, 0, 0, 0.677);
+  box-shadow: 1px 1px 3px rgba(255, 247, 247, 0.677);
+}
+.oneBook button::-webkit-scrollbar {
+  width: 10px;
+}
+
+.oneBook button::-webkit-scrollbar-thumb {
+  visibility: hidden;
+  background-color: #e7e2e2;
+  border-radius: 20px;
+}
+
+.oneBook button::-webkit-scrollbar-thumb:hover {
+  visibility: visible;
+  background-color: rgb(255, 255, 255);
 }
 .oneBook button:hover{
   transform: scale(1.05);
@@ -319,6 +331,8 @@ svg{
 }
 
 .RichEditor-root {
+  width: 90%;
+  margin: 10px;
   background: #ffffff;
   border: 1px solid #ddd;
   font-family: Arial, Helvetica, sans-serif;
@@ -480,13 +494,27 @@ svg{
   height: 85vh;
   width: 90%;
   border: 2px solid gray;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 20px;
   margin: 20px;
   margin-left:50px ;
   margin-right: 50px;
   box-sizing: border-box;
   overflow: auto;
+}
+.AnswerList::-webkit-scrollbar {
+  width: 10px;
+}
+
+.AnswerList::-webkit-scrollbar-thumb {
+  visibility: hidden;
+  background-color: #e7e2e2;
+  border-radius: 20px;
+}
+
+.AnswerList::-webkit-scrollbar-thumb:hover {
+  visibility: visible;
+  background-color: rgb(255, 255, 255);
 }
 .AnswerList .user,.AnswerList .ChatGPT{
   background-color: aquamarine;

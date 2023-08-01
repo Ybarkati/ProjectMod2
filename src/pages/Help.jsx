@@ -3,9 +3,9 @@ import Answer from '../components/Answer';
 import AnswerInput from '../components/AnswerInput';
 import { useTool } from "../components/ContextTools"
 
-const API_KEY = "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";
+const API_KEY = "Enter Your key";
 const systemMessage = { 
-    "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
+    "role": "system", "content": "be like an AI."
   }
   
   function Help() {
@@ -13,7 +13,7 @@ const systemMessage = {
 
     const [messages, setMessages] = useState([
       {
-        message: "Hello, I'm ChatGPT! Ask me anything!",
+        message: "Hello, I'm YassineAI ! Ask me anything!",
         sentTime: "just now",
         sender: "ChatGPT"
       }
