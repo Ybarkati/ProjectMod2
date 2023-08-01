@@ -164,11 +164,12 @@ a div{
 .bookInfo .img button{
   border:2px solid #ffffff;
   padding: 5px;
-  border-radius: 50px;
-  transform: 1s;
+  border-radius: 60px;
+  transition: 1s;
+  
 }
 .bookInfo .img button:hover{
-      transform: scale(1.2);
+      transform: scale(1.1);
       color: red;
 }
 .bookInfo{
