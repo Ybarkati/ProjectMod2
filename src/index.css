@@ -12,6 +12,30 @@ html,body{
 *{
   margin: 0;
 }
+.Main{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Main img{
+  height: 90%;
+}
+.Main button{
+  background-color: rgb(220, 109, 19);
+  margin-bottom: 100px;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  transition: 1s;
+}
+.Main button:hover{
+  background-color: rgb(153, 85, 33)(205, 38, 38);
+  transform: scale(1.2);
+}
 .containerMain{
   display: flex;
   justify-content: center;
@@ -448,4 +472,85 @@ svg{
   list-style-type: decimal;
    margin-left: 40px;
    padding-left: 40px;
+}
+.AnswerList{
+  
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 90%;
+  border: 2px solid gray;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  margin-left:50px ;
+  margin-right: 50px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.AnswerList .user,.AnswerList .ChatGPT{
+  background-color: aquamarine;
+  width: fit-content;
+  
+  margin-top: 15px;
+  border-radius: 20px;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.AnswerList .ChatGPT{
+  margin-right: 70px;
+}
+.AnswerList .user{
+     align-self: self-end;
+     margin-left: 200px;
+     background-color: aqua;
+}
+.AnswerList .ChatTyping{
+  width: 100%;
+  justify-self: end;
+  bottom: 10px;
+  color: antiquewhite;
+}
+.AnswerAndInput{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AnswerAndInput .ChatGPTInput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.AnswerAndInput .ChatGPTInput input{
+  outline: none;
+  border-radius: 20px;
+  height: 40px;
+  width: 70%;
+  padding-left: 10px;
+  background-color: antiquewhite;
+}
+.AnswerAndInput .ChatGPTInput form{
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.AnswerAndInput .ChatGPTInput form button{
+  background-color: rgb(240, 248, 255,0);
+  color: antiquewhite;
+  border: 2px solid antiquewhite;
+  padding: 3px;
+  border-radius: 20px;
+  margin-left: 5px;
+  transition: 1s;
+}
+.AnswerAndInput .ChatGPTInput form button:hover{
+  transform: scale(1.1);
+  color: aqua;
+}
+.ChatBot{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }

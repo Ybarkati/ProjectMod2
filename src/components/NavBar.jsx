@@ -6,7 +6,7 @@ const NavBar = () => {
   const Menus = [
     { title: "Books", src: "BookIcon" , gap: true,to:"/books"},
     { title: "MyNote", src: "contractIcon", gap: true,to:"/MyNote" },
-    { title: "help", src: "helpIcon", gap: true,to:"/books" },
+    { title: "help", src: "helpIcon", gap: true,to:"/Help" },
     { title: "Setting", src: "Setting" , gap: true,to:"/books" },
   ];
 
