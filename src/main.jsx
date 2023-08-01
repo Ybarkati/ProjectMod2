@@ -4,12 +4,17 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ToolProvider from './components/ContextTools.jsx'
+import TextEditorProvider from './components/context.jsx'
+import "./components/init"
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ToolProvider>
-    <Router>
+      <TextEditorProvider>
+       <Router>
         <App />
-    </Router>
+       </Router>
+     </TextEditorProvider>
     </ToolProvider>
   </React.StrictMode>,
 )

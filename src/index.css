@@ -157,8 +157,19 @@ a div{
 }
 .bookInfo .img{
   display: flex;
-  
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+.bookInfo .img button{
+  border:2px solid #ffffff;
+  padding: 5px;
+  border-radius: 50px;
+  transform: 1s;
+}
+.bookInfo .img button:hover{
+      transform: scale(1.2);
+      color: red;
 }
 .bookInfo{
   margin-top: 60px;
@@ -280,4 +291,160 @@ svg{
 .svg-icon:hover {
   transform: scale(1.2);
   fill: red 
+}
+
+.RichEditor-root {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.RichEditor-editor {
+  border-top: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+  margin: 0 -15px -15px;
+  padding: 15px;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+  min-height: 100px;
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.RichEditor-controls {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.RichEditor-styleButton {
+  color: #999;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+.RichEditor-activeButton {
+  color: #5890ff;
+}
+.oneFile{
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: 1s;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid rgb(255, 255, 255);
+}
+/* .oneFile:hover{
+  transform: scale(1.1);
+} */
+.textFileContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  height: fit-content;
+  border-radius: 10px;
+}
+.textFileContainer button{
+  background-color: red;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50%;
+  border: none;
+  visibility: hidden;
+  cursor: pointer;
+  transition:  1s;
+}
+.textFileContainer button:hover{
+    transform: scale(1.2);
+}
+.textFileContainer:hover button{
+    transform: rotate(180deg);
+    visibility: visible;
+  
+}
+.ContainerOfTextFile{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.MyNotePage{
+  margin: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.MyNotePage h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+.MyNotePage h2{
+  font-size: 25px;
+  font-weight: bold;
+}
+.MyNotePage h3{
+  font-size: 20px;
+  font-weight: bold;
+}
+.MyNotePage h4{
+  font-size: 15px;
+  font-weight: bold;
+}
+.MyNotePage h5{
+  font-size: 12px;
+  font-weight: bold;
+}
+.MyNotePage h6{
+  font-size: 10px;
+  font-weight: bold;
+}
+.MyNotePage ul{
+  list-style-type: disc;
+  margin-left: 40px;
+  padding-left: 40px;
+}
+.MyNotePage ol{
+  list-style-type: decimal;
+   margin-left: 40px;
+   padding-left: 40px;
 }

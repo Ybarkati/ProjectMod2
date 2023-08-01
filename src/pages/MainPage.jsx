@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {  useParams } from "react-router-dom";
 import { useTool } from "../components/ContextTools"
+import "../components/init"
 
 export function MainPage(){
     const {Open}=useTool()

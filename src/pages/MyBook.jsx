@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTool } from "../components/ContextTools"
+import "../components/init"
 
 
 import {  useNavigate, useParams } from "react-router-dom";
@@ -55,6 +56,7 @@ export function MyBook(){
             <div className="bookInfo">
                 <div className="img">
                    <img src={infoBook.img}/>
+                   <button onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
                </div>
 
                 <div className="InfoBookRight">

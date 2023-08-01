@@ -1,4 +1,5 @@
 import { useTool } from "../components/ContextTools"
+import "../components/init"
 
 export default function Main(){
     const {Open}=useTool()

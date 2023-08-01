@@ -2,7 +2,7 @@ import { Routes,Route } from "react-router-dom";
 import { MainPage } from './MainPage';
 import { ChoseSubject } from './ChoseSubject';
 import { MyBook } from "./MyBook";
-
+import "../components/init"
 function Books() {
   
   return (
