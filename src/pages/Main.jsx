@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useTool } from "../components/ContextTools"
 import "../components/init"
-import {background1} from "../assets/background1.png"
+import background1 from "../assets/background1.png"
 
 export default function Main(){
     const navigate=useNavigate()

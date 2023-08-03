@@ -3,7 +3,7 @@ import Answer from '../components/Answer';
 import AnswerInput from '../components/AnswerInput';
 import { useTool } from "../components/ContextTools"
 
-const API_KEY = "Enter Your Key";
+const API_KEY = "Enter Your key";
 const systemMessage = { 
     "role": "system", "content": "be like an AI."
   }
