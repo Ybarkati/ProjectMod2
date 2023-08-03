@@ -39,7 +39,13 @@ export function ChoseSubject(){
        getData(random)
       
      }, [])
+     const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        navigate(`/books/${subject}`)
+      }
+    };
   
+    
    const handleOptionChange = (event) => {
       const selectedValue = event.target.value;
       setSubject(selectedValue);
@@ -48,7 +54,7 @@ export function ChoseSubject(){
     return (
       <div className="choseSubject" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
          <div className="containerChosebox"> 
-         <input className="Chosebox" value={subject} onChange={handleOptionChange}placeholder="  Search for your Book..." />
+         <input className="Chosebox" onKeyPress={handleKeyPress} value={subject} onChange={handleOptionChange}placeholder="  Search for your Book..." />
          <p>|</p>
         <Link to={`/books/${subject}`}> 
             <button  >  <svg
