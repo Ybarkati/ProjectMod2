@@ -8,7 +8,7 @@ export default function Main(){
     return(
         <div className="Main" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
             
-            <img src="./src/assets/background.gif" alt="" />
+            <img src="./src/assets/background1.png" alt="" />
              <button onClick={()=>navigate("/books")}>Get Your Book</button>
         </div>
     )

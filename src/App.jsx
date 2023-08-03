@@ -10,6 +10,7 @@ import MyNote from './pages/MyNote'
 import MyNotePage from './pages/MyNote'
 import MyNotePageForBook from './pages/MyNoteForBook'
 import Help from './pages/Help'
+import MyNoteHelp from './pages/MyNoteHelp'
 function App() {
   return (
     <div className='App'>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/books" element={<ChoseSubject/>}/>
         <Route path="/MyNote" element={<MyNotePage/>}/>
         <Route path="/MyNote/:name" element={<MyNotePageForBook/>}/>
+        <Route path="/MyNote/Help" element={<MyNoteHelp/>}/>
         <Route path="/books/:symbol/:symbol2" element={<MyBook/>}/> 
         <Route path="/Help" element={<Help/>}/>
       </Routes>

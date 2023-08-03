@@ -119,11 +119,12 @@ html,body{
   width: 270px;
   height: 370px;
   border-radius: 10px;
-  background-color: #272727;
+  background-color: rgba(39, 39, 39, 0.2);
   overflow: auto;
   transition: 1s;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgba(255, 247, 247, 0.677);
+  border: 0px solid rgb(75, 1, 1);
+  box-shadow: 5px 5px 5px rgba(90, 3, 3, 0.57);
 }
 .oneBook button::-webkit-scrollbar {
   width: 10px;
@@ -398,12 +399,29 @@ svg{
 .oneFile{
   margin: 10px;
   padding: 10px;
+  height: 430px;
+  overflow: auto;
   width: 300px;
   color: #ffffff;
   border-radius: 10px;
   transition: 1s;
   font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(75, 1, 1);
+  box-shadow: 5px 5px 10px rgba(90, 3, 3, 0.57);
+}
+.oneFile::-webkit-scrollbar {
+  width: 10px;
+}
+
+.oneFile::-webkit-scrollbar-thumb {
+  visibility: hidden;
+  background-color: #e7e2e2;
+  border-radius: 20px;
+}
+
+.oneFile::-webkit-scrollbar-thumb:hover {
+  visibility: visible;
+  background-color: rgb(255, 255, 255);
 }
 /* .oneFile:hover{
   transform: scale(1.1);
@@ -529,6 +547,19 @@ svg{
 .AnswerList .ChatGPT{
   margin-right: 70px;
 }
+.AnswerList .ChatGPT button{
+ visibility: hidden;
+ display: none;
+ margin: 5px;
+ transition: 1s;
+}
+.AnswerList .ChatGPT:hover button{
+  visibility: visible;
+  display: block;
+}
+.AnswerList .ChatGPT button:hover{
+  transform: scale(1.2);
+}
 .AnswerList .user{
      align-self: self-end;
      margin-left: 200px;
@@ -546,6 +577,24 @@ svg{
   justify-content: center;
   align-items: center;
 }
+/* .AnswerAndButton{
+  display: flex;
+  flex-direction: column;
+  width:max-content;
+  align-items: center;
+}
+.AnswerAndButton button{
+  color: antiquewhite;
+  position: absolute;
+  margin: -12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  border:1px solid #ddd;
+  width: 110px;
+  border-radius: 20px;
+  visibility: hidden;
+} */
 .AnswerAndInput .ChatGPTInput {
   width: 100%;
   display: flex;
