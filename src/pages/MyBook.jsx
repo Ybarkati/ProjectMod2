@@ -1,9 +1,6 @@
 import { useLayoutEffect, useState } from "react";
-
 import { useTool } from "../components/ContextTools"
 import "../components/init"
-import { AiOutlineDownload } from "react-icons/ai"
-
 import {  useNavigate, useParams } from "react-router-dom";
 export function MyBook(){
     const {Open}=useTool()
@@ -71,10 +68,11 @@ export function MyBook(){
             <div className="bookInfo">
                 <div className="img">
                    <img src={infoBook.img}/>
-                   <button onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
                    {infoBook.pdf? <>{infoBook.pdf.isAvailable? <>                   <button style={{marginTop:"10px"}} onClick={handleRedirect}>Download</button>
 </>:""}</>:""}
                      {infoBook.more?  <button style={{marginTop:"10px"}} onClick={handleRedirectMore}>See more</button>:""}
+                     <button style={{marginTop:"10px"}} onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
+
                </div>
 
                 <div className="InfoBookRight">
