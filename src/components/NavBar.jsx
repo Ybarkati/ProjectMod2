@@ -1,13 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { useTool } from "./ContextTools";
+import BookIcon from "../assets/BookIcon.png"
+import contractIcon from "../assets/contractIcon.png"
+import control from "../assets/control.png"
+import helpIcon from "../assets/helpIcon.png"
+import logo from "../assets/logo.png"
+import Setting from "../assets/Setting.png"
 const NavBar = () => {
     const {Open,handleOpen}=useTool()
   const navigate =useNavigate()
   const Menus = [
-    { title: "Books", src: "BookIcon" , gap: true,to:"/books"},
-    { title: "MyNote", src: "contractIcon", gap: true,to:"/MyNote" },
-    { title: "help", src: "helpIcon", gap: true,to:"/Help" },
-    { title: "Setting", src: "Setting" , gap: true,to:"/books" },
+    { title: "Books", src: BookIcon , gap: true,to:"/books"},
+    { title: "MyNote", src: contractIcon, gap: true,to:"/MyNote" },
+    { title: "help", src: helpIcon, gap: true,to:"/Help" },
+    { title: "Setting", src: Setting , gap: true,to:"/books" },
   ];
 
   return (
@@ -18,14 +24,14 @@ const NavBar = () => {
         } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
       >
         <img
-          src="./src/assets/control.png"
+          src={control}
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!Open && "rotate-180"}`}
           onClick={() => handleOpen(!Open)}
         />
         <div className="flex gap-x-4 items-center"  onClick={()=>navigate(`/`)}>
           <img
-            src="./src/assets/logo.png"
+            src={logo}
             className={`cursor-pointer duration-500 ${
               Open && "rotate-[360deg]"
             }`}
@@ -46,7 +52,7 @@ const NavBar = () => {
               ${Menu.gap ? "mt-9" : "mt-2"}  `}
             >
               
-              <img src={`./src/assets/${Menu.src}.png`} />
+              <img src={Menu.src} />
               <span className={`${!Open && "hidden"} origin-left font-semibold duration-200`}>
                 {Menu.title}
               </span>
