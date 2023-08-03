@@ -402,12 +402,13 @@ svg{
   height: 430px;
   overflow: auto;
   width: 300px;
-  color: #ffffff;
+  color: #000000;
   border-radius: 10px;
   transition: 1s;
+  background-color: #ddd;
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid rgb(75, 1, 1);
-  box-shadow: 5px 5px 10px rgba(90, 3, 3, 0.57);
+  box-shadow: 5px 5px 3px rgba(96, 74, 74, 0.982);
 }
 .oneFile::-webkit-scrollbar {
   width: 10px;

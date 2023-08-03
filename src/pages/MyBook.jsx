@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
+
 import { useTool } from "../components/ContextTools"
 import "../components/init"
-
+import { AiOutlineDownload } from "react-icons/ai"
 
 import {  useNavigate, useParams } from "react-router-dom";
 export function MyBook(){
@@ -19,10 +20,12 @@ export function MyBook(){
           const OurBooks=book.items.filter((element)=> 
               element.id==params.symbol2 
             )
-         console.log(OurBooks[0],"heerere---------------------")
+         console.log(OurBooks[0].accessInfo.pdf,"heerere---------------------")
         
          setInfoBook({
+           more:OurBooks[0].volumeInfo.previewLink,
             title:OurBooks[0].volumeInfo.title,
+            pdf:OurBooks[0].accessInfo.pdf ,
             description:OurBooks[0].volumeInfo.description,
             img:OurBooks[0].volumeInfo.imageLinks.thumbnail
          })
@@ -30,16 +33,28 @@ export function MyBook(){
          console.error(error); 
        } 
        } 
-      useEffect(() => {
+       const handleRedirect = () => {
+        if (infoBook.pdf.isAvailable){
+          console.log(infoBook.pdf.isAvailable,infoBook.pdf.acsTokenLink)
+          const externalSiteUrl =infoBook.pdf.acsTokenLink || infoBook.pdf.downloadLink
+          window.open(externalSiteUrl, 'externalSiteWindow', 'width=800,height=600')
+          console.log(externalSiteUrl)
+        }
+      };
+      const handleRedirectMore = () => {
+        if (infoBook.more){
+          const externalSiteUrl =infoBook.more
+          window.open(externalSiteUrl, 'externalSiteWindow', 'width=800,height=600')
+          console.log(externalSiteUrl)
+        }
+      };
+      useLayoutEffect(() => {
         getbook(params.symbol)
       }, [])
     return (
         <div className="currentBook" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
             
-            {/* <div className="button">
-            <button onClick={()=>navigate(`/books/${params.symbol}`)}>Go Back</button>
-
-            </div> */}
+            
             <div className='barTop'>
                <svg onClick={()=>navigate(`/books/${params.symbol}`)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0  150 70" aria-labelledby="title"
                aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
@@ -57,6 +72,9 @@ export function MyBook(){
                 <div className="img">
                    <img src={infoBook.img}/>
                    <button onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
+                   {infoBook.pdf? <>{infoBook.pdf.isAvailable? <>                   <button style={{marginTop:"10px"}} onClick={handleRedirect}>Download</button>
+</>:""}</>:""}
+                     {infoBook.more?  <button style={{marginTop:"10px"}} onClick={handleRedirectMore}>See more</button>:""}
                </div>
 
                 <div className="InfoBookRight">
