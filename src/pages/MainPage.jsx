@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import {  useParams } from "react-router-dom";
 import { useTool } from "../components/ContextTools"
 import "../components/init"
+import { useDarkMode } from "../components/ContextDarkMode";
 
 export function MainPage(){
+    const {DarkMode}=useDarkMode()
     const {Open}=useTool()
 
     const [data,setData]=useState([])
@@ -53,8 +55,8 @@ export function MainPage(){
                 {data.map((element)=>
                { return (
                     
-                    <div key={element.id} className="oneBook">
-                        <button onClick={(event)=>{
+                    <div key={element.id} className="oneBook" style={{boxShadow:!DarkMode && "2px 2px 10px black"}}>
+                        <button style={{boxShadow:!DarkMode && "2px 2px 10px black"}} onClick={(event)=>{
                             navigate(`/books/${params.symbol}/${event.target.id}`)
                         }}>
                           <img src={element.img} id={element.id} />

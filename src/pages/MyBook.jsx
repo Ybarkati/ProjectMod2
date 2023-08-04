@@ -2,9 +2,10 @@ import { useLayoutEffect, useState } from "react";
 import { useTool } from "../components/ContextTools"
 import "../components/init"
 import {  useNavigate, useParams } from "react-router-dom";
+import { useDarkMode } from "../components/ContextDarkMode";
 export function MyBook(){
     const {Open}=useTool()
-
+    const {DarkMode}=useDarkMode()
     const navigate=useNavigate()
     const [infoBook,setInfoBook]=useState({})
     const params=useParams()
@@ -49,10 +50,10 @@ export function MyBook(){
         getbook(params.symbol)
       }, [])
     return (
-        <div className="currentBook" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms"}}>
+        <div className="currentBook" style={{marginLeft:Open? "160px":"80px",transition:" margin 300ms",color:!DarkMode && "black"}}>
             
             
-            <div className='barTop'>
+            <div className='barTop' style={{color:!DarkMode && "black"}}>
                <svg onClick={()=>navigate(`/books/${params.symbol}`)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0  150 70" aria-labelledby="title"
                aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
                <title>Angle Left Circle</title>
@@ -65,19 +66,18 @@ export function MyBook(){
               <h1>{infoBook.title}</h1>
             </div>
             
-            <div className="bookInfo">
+            <div className="bookInfo" style={{color:!DarkMode && "black" ,margin:!DarkMode && "1px solid black"}}>
                 <div className="img">
-                   <img src={infoBook.img}/>
-                   {infoBook.pdf? <>{infoBook.pdf.isAvailable? <>                   <button style={{marginTop:"10px"}} onClick={handleRedirect}>Download</button>
-</>:""}</>:""}
-                     {infoBook.more?  <button style={{marginTop:"10px"}} onClick={handleRedirectMore}>See more</button>:""}
-                     <button style={{marginTop:"10px"}} onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
+                   <img src={infoBook.img} style={{boxShadow:!DarkMode && "2px 2px 10px black"}}/>
+                   {infoBook.pdf? <>{infoBook.pdf.isAvailable? <><button style={{marginTop:"10px" ,border:!DarkMode && "2px solid black"}} onClick={handleRedirect}>Download</button></>:""}</>:""}
+                     {infoBook.more?  <button style={{marginTop:"10px",border:!DarkMode && "2px solid black"}} onClick={handleRedirectMore}>See more</button>:""}
+                     <button style={{marginTop:"10px",border:!DarkMode && "2px solid black"}} onClick={()=>navigate(`/MyNote/${infoBook.title}`)}>take note</button>
 
                </div>
 
-                <div className="InfoBookRight">
-                   <h1>{infoBook.title}</h1>
-                   <p><span>Description:   </span><br/>{infoBook.description}</p>
+                <div className="InfoBookRight" style={{color:!DarkMode && "black"}}>
+                   <h1 style={{color:!DarkMode && "black"}}>{infoBook.title}</h1>
+                   <p style={{color:!DarkMode && "black"}}><span>Description:   </span><br/>{infoBook.description}</p>
                 </div>
             </div>
         </div>

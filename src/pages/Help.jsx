@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Answer from '../components/Answer';
 import AnswerInput from '../components/AnswerInput';
 import { useTool } from "../components/ContextTools"
-
 const API_KEY = "Enter Your Key";
 const systemMessage = { 
     "role": "system", "content": "be like an AI."

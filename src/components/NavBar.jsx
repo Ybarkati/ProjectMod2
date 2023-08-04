@@ -5,23 +5,25 @@ import contractIcon from "../assets/contractIcon.png"
 import control from "../assets/control.png"
 import helpIcon from "../assets/helpIcon.png"
 import logo from "../assets/logo.png"
-import Setting from "../assets/Setting.png"
+import { BsFillMoonFill } from 'react-icons/bs'
+import { BiSun } from 'react-icons/bi'
+import { useDarkMode } from "./ContextDarkMode";
 const NavBar = () => {
     const {Open,handleOpen}=useTool()
   const navigate =useNavigate()
+  const {DarkMode,setDarkMode}=useDarkMode()
   const Menus = [
     { title: "Books", src: BookIcon , gap: true,to:"/books"},
     { title: "MyNote", src: contractIcon, gap: true,to:"/MyNote" },
-    { title: "help", src: helpIcon, gap: true,to:"/Help" },
-    { title: "Setting", src: Setting , gap: true,to:"/books" },
+    { title: "Help", src: helpIcon, gap: true,to:"/Help" },
   ];
 
   return (
-    <div className={`flex fixed top-0 border-e-4 `}>
+    <div className={`flex fixed top-0 ${!DarkMode && "border-black border-e-8"} border-e-4 `}>
       <div
         className={` ${
           Open ? "w-40 " : "w-20 "
-        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
+        } ${!DarkMode && "bg-neutral-200"} bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
       >
         <img
           src={control}
@@ -49,16 +51,32 @@ const NavBar = () => {
               onClick={()=>navigate(`${Menu.to}`)}
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"}  `}
+              ${Menu.gap ? "mt-9" : "mt-2"} ${!DarkMode && "hover:bg-slate-600"} ${!DarkMode && "text-black"} `}
             >
               
               <img src={Menu.src} />
-              <span className={`${!Open && "hidden"} origin-left font-semibold duration-200`}>
+              <span className={`${!Open && "hidden"} origin-left font-semibold duration-200 ${!DarkMode && "text-black"}`}>
                 {Menu.title}
               </span>
               
-            </li>
+            </li> 
           ))}
+          <li
+              onClick={()=>setDarkMode(!DarkMode)}
+              key={"dark Mode"}
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+               mt-9 ${!DarkMode && "hover:bg-slate-600"}`}
+            >
+              {!DarkMode? <BsFillMoonFill style={{fontSize:"30px",marginLeft:"0",color:"black"}} />
+              :
+              <BiSun style={{fontSize:"30px",marginLeft:"0"}}/>
+              }
+              
+              <span className={`${!Open && "hidden"} origin-left font-semibold duration-200 ${!DarkMode && "text-black"}`}>
+                {DarkMode? "Light Mode":"Dark Mode"}
+              </span>
+              
+            </li>
         </ul>
       </div>
  
