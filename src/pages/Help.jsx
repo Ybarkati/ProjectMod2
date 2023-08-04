@@ -2,12 +2,14 @@ import { useState } from 'react'
 import Answer from '../components/Answer';
 import AnswerInput from '../components/AnswerInput';
 import { useTool } from "../components/ContextTools"
+import { useDarkMode } from '../components/ContextDarkMode';
 const API_KEY = "Enter Your Key";
 const systemMessage = { 
     "role": "system", "content": "be like an AI."
   }
   
   function Help() {
+    const {DarkMode}=useDarkMode()
     const {Open}=useTool()
 
     const [messages, setMessages] = useState([
@@ -90,7 +92,7 @@ const systemMessage = {
                 console.log(message)
                 return <Answer key={i} model={message} />
               })}
-               <div className='ChatTyping'>
+               <div className='ChatTyping' style={{color:!DarkMode && "black"}}>
                {isTyping ? "typing..." : null}
                </div>
             </div>
