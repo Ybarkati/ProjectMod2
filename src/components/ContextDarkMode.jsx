@@ -8,28 +8,36 @@ export function useDarkMode(){
 }
 
 export default function DarkModeProvider(props){
-    const [DarkMode,setDarkMode]=useState(true)
-    const DarkModeValue={
-          DarkMode,
-          setDarkMode
-    }
+    // const [DarkMode,setDarkMode]=useState(true)
+    
+    const [DarkMode, setDarkMode] = useState(() => {
+        const savedDarkMode = localStorage.getItem('DarkMode');
+        return savedDarkMode ? JSON.parse(savedDarkMode) : [];
+      });
+    
+      useEffect(() => {
+        const savedDarkMode = localStorage.getItem('DarkMode');
+        if (savedDarkMode) {
+          setDarkMode(JSON.parse(savedDarkMode));
+        }
+      }, []); 
+      useEffect(() => {
+        localStorage.setItem('DarkMode', JSON.stringify(DarkMode));
+      }, [DarkMode]);
     useEffect(() => {
         if (DarkMode){
             document.body.style.backgroundColor = '#000000';
         }else {
             document.body.style.backgroundColor = '#ffffff';
         }
-        
-    
-        // If you want to change other styles as well, you can do it like this:
-        // document.body.style.color = '#333';
-        // document.body.style.fontFamily = 'Arial, sans-serif';
-        // Don't forget to clean up the style on component unmount
         return () => {
           document.body.style.backgroundColor = '';
-          // Remove other styles here if necessary
         };
       }, [DarkMode]);
+      const DarkModeValue={
+        DarkMode,
+        setDarkMode
+      }
     return (
         <DarkModeContext.Provider value={DarkModeValue}>
               {props.children}
