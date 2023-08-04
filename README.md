@@ -61,7 +61,7 @@ The app also supports dark and light mode, which you can toggle as per your pref
 
 ## Deployment
 
-The app is deployed and accessible online. You can access it by visiting [MyLibrary Deployment]([link-to-deployment](https://glistening-hummingbird-ff9dc3.netlify.app/)).
+The app is deployed and accessible online. You can access it by visiting [MyLibrary Deployment](https://glistening-hummingbird-ff9dc3.netlify.app/).
 
 ## Contributing
 
