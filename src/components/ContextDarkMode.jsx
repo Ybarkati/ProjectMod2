@@ -12,7 +12,7 @@ export default function DarkModeProvider(props){
     
     const [DarkMode, setDarkMode] = useState(() => {
         const savedDarkMode = localStorage.getItem('DarkMode');
-        return savedDarkMode ? JSON.parse(savedDarkMode) : [];
+        return savedDarkMode ? JSON.parse(savedDarkMode) :false;
       });
     
       useEffect(() => {
